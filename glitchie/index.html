@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WaveDream.Space</title>
+
+<!--<script src="https://cdn.tiny.cloud/1/ki8pb4oykcncveugv6cbcux2k8jfeeu1owh7t70b7a7rd2b2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script type="text/javascript">
+	tinymce.init({
+		selector: "textarea",
+		menubar: false,
+		resize: false,
+		content_style do redo | bold italic underline | forecolor | alignleft aligncenter alignright alignjustify | outdent indent'
+	});
+	</script>-->
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body onload="OrbitBorder()" class="background">
+	<svg id="linecontainer" width="100vw" height="100vh">
+	  </svg>  
+	<div id="container">
+
+		<img id="exptri" src="img/triangles.svg">
+
+		<div id="orb-red2"></div>
+		<div id="orb-magenta"></div>
+		<div id="orb-cyan"></div>
+		<div id="orb-lime"></div>
+		<div id="orb-yellow"></div>
+		<div id="orb-orange"></div>
+		<div id="orb-red"></div>
+		<div id="orb-magenta2"></div>
+		<div id="orb-cyan2"></div>
+		<div id="orb-lime2"></div>
+		<div id="orb-yellow2"></div>
+		<div id="orb-orange2"></div>
+		
+		<div id="expand" onclick="Expand()"></div>
+		<div id="contract" onclick="Contract()"></div>
+
+		
+
+		<div class="nodecontainer">
+
+		</div>
+
+		<div id="modulebox">
+			
+			<div id="topbar" onclick="ModuleToggle()"></div>
+
+			<nav>
+				<div class="nav nav-pills justify-content-center" id="nav-tab" role="tablist">
+				  <a class="nav-item nav-link" id="nav-node-tab" data-toggle="tab" href="#nav-module" role="tab" aria-controls="nav-home" aria-selected="false">Module</a>
+				  <a class="nav-item nav-link active" id="nav-overview-tab" data-toggle="tab" href="#nav-overview" role="tab" aria-controls="nav-profile" aria-selected="true">Overview</a>
+				  <a class="nav-item nav-link" id="nav-system-tab" data-toggle="tab" href="#nav-system" role="tab" aria-controls="nav-contact" aria-selected="false">System</a>
+				</div>
+			</nav>
+
+			<!--TAB CONTENTS-->
+			<div class="tab-content" id="nav-tabContent">
+				
+				<!--MODULE TAB CONTENTS-->				
+				<div class="tab-pane fade" id="nav-module" role="tabpanel" aria-labelledby="node-tab">
+
+					<div>
+						
+						
+						<div id="stepseqdiv">
+							<div id="row1">
+								<div class="seqstepdb"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+								<div class="seqstepdb"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+							</div>
+							<div id="row2">
+								<div class="seqstepdb"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+								<div class="seqstepdb"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+								<div class="seqstep"></div>
+							</div>
+							
+							<div id="textdiv"> <textarea></textarea> </div>
+						</div>
+						<button type="button" id="tone" class="addnode btn btn-secondary btn-sm rounded-pill" onclick="TonePlay()">Tone</button>
+
+
+						<div class="form-group">
+							<select onchange="ModuleSelect()" id="moduleselect" class="custom-select custom-select-sm form-control form-control-sm" style="width: 150px">
+								<option value="1">Text</option>
+								<option value="2">Step Sequencer</option>
+								<option value="3">Piano Roll</option>
+								<option value="4">Visual Synth</option>
+							</select>
+							<h id="selectmodule" class="text-light">Select Module:</h>
+
+						</div>
+						
+						
+						
+						
+					</div>
+				</div>
+					
+				<!--OVERVIEW TAB CONTENTS-->				
+				<div class="tab-pane fade active show" id="nav-overview" role="tabpanel" aria-labelledby="overview-tab">
+				
+					<div class="form-group">
+						<select onchange="OrbitBorder()" id="orbitselect" class="orbitselect custom-select custom-select-sm form-control form-control-sm" style="width: 120px" id="sel1">
+							<option value="1">Red</option>
+							<option value="2">Orange</option>
+							<option value="3">Yellow</option>
+							<option value="4">Green</option>
+							<option value="5">Cyan</option>
+							<option value="6">Magenta</option>
+						</select>
+						<button type="button" id="addnodebutton" class="addnode btn btn-secondary btn-sm rounded-pill" onclick="AddNode()">Add Node</button>
+						<button type="button" id="removenodebutton" class="removenode btn btn-danger btn-sm rounded-pill" onclick="removeNode()">Remove Node</button>
+					</div>
+					
+					<div id="NodeHeader">
+					<b class="text-light">Nodes</b>
+				</div>
+					
+					<div class="nodelistcontainer">
+						<ul class="list-group" id="nodelist">
+							<div id="redlist"></div>
+							<div id="orangelist"></div>
+							<div id="yellowlist"></div>
+							<div id="greenlist"></div>
+							<div id="cyanlist"></div>
+							<div id="magentalist"></div>
+						</ul>
+					</div>
+
+				</div>
+
+
+				<!--SYSTEM TAB CONTENTS-->
+				<div class="tab-pane fade" id="nav-system" role="tabpanel" aria-labelledby="system-tab">
+					
+					<b class="text-light">TEST ONE TWO THREE</b>
+
+				</div>
+
+			<!--END TABCONTENTS-->
+			</div>
+
+		<!--END MODULEBOX-->
+		</div>
+
+		
+		<button type="button" id="connect" class="btn btn-outline-light btn-sm rounded-pill" onclick="ConnectToggle()">⦿-⦿</button>
+	</div>
+	
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/tonecontent.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>-->
+<!--<script src="js/p5content.js"></script>-->
+
+
+</body>
+</html>
+
