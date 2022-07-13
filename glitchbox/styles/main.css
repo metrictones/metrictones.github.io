@@ -1,0 +1,699 @@
+#control {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 70px;
+}
+
+
+#upchev {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#upchev:hover {
+  stroke: white;
+}
+
+#downchev {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#downchev:hover {
+  stroke: white;
+}
+
+
+#concon {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 48px;
+width: 20vw;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#linecontainter {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#orbnav {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+
+#plus {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+
+#plus:hover {
+  stroke: white;
+}
+
+#fright {
+  position: absolute;
+  right: 5%;
+  bottom: -25%;
+  transform: translateY(-50%);
+}
+
+#fright:hover {
+  stroke: white;
+}
+
+#fleft {
+  position: absolute;
+  bottom: -25%;
+  transform: translateY(-50%);
+  left: 5%;
+}
+
+
+
+#fleft:hover {
+  stroke: white;
+}
+
+
+#minus:hover {
+  stroke-width: 2px;
+}
+
+#mainFlex {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+#adj {
+  position: absolute;
+  right: 5px;
+  bottom:4px;
+  width: 40px;
+  height: 40px;
+  transition: opacity, 0.2s;
+}
+
+#adj:hover {
+  stroke-width: 1px;
+}
+
+#selectmodule {
+  top: 42.5vh;
+  right: 40%;
+  position: absolute;
+}
+
+#row1 {
+  width: 70vh;
+  height: 8vh;
+  top: 10px;
+  position: relative;
+}
+#row2 {
+  width: 70vh;
+}
+
+.seqstep {
+  border: 1px solid white;
+  height: 5vh;
+  width: 5vh;
+  margin-left: 10px;
+  left: 10%;
+  float: left;
+  position: relative;
+}
+
+.seqstep:hover {
+  background-color: grey;
+}
+.seqstepdb:hover {
+  background-color: grey;
+}
+.seqstepdb {
+  border: 3px solid white;
+  height: 5vh;
+  width: 5vh;
+  margin-left: 10px;
+  left: 10%;
+  float: left;
+  position: relative;
+
+}
+
+#textdiv {
+  display: none;
+}
+
+
+.listnodes {
+  position: relative;
+  top: 18px;
+  right: 20px;
+}
+
+
+
+#NodeHeader {
+  position: relative;
+  left: 4%;
+  width: 35vh;
+}
+
+.deletebutton {
+  position: relative;
+  float: right;
+}
+
+.nodelistcontainer {
+  overflow: hidden;
+}
+
+.listgroup::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
+
+
+#nodelist {
+  overflow: scroll;
+  position: relative;
+  width: 35vh;
+  height: 27vh;
+}
+
+#nodecontent {
+  position: relative;
+  left: 0%;
+}
+
+.addnode {
+  position: relative;
+  border: 2px solid red;
+  transform: translateX(-120%);
+  left: 0;
+  top: 8px;
+}
+
+#connect {
+  position: absolute;
+  height: 30px;
+  top: 10px;
+  left: 10px;
+
+}
+
+.removenode {
+  position: relative;
+  left: 0;
+  transform: translateX(-90%);
+  top: 8px;
+}
+
+#orbitselect {
+  transform: translateX(-55%);
+  left: 50%;
+  top: 8px;
+  position: relative;
+
+}
+
+#moduleselect {
+  top: 42vh;
+  position: absolute;
+  right: 20px;
+}
+
+.nodecontainer {
+  position: absolute;
+}
+
+button {
+  position: relative;
+  top: 0;
+}
+
+.rednodes {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  margin: -4px;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+.rednodes:hover {
+  width: 12px;
+  height: 12px;
+  margin: -6px;
+}
+
+.orangenodes {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: orange;
+  position: absolute;
+  margin: -4px;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+.orangenodes:hover {
+  width: 12px;
+  height: 12px;
+  margin: -6px;
+}
+.yellownodes {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: absolute;
+  margin: -4px;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+.yellownodes:hover {
+  width: 12px;
+  height: 12px;
+  margin: -6px;
+}
+
+.greennodes {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: lime;
+  position: absolute;
+  margin: -4px;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+.greennodes:hover {
+  width: 12px;
+  height: 12px;
+  margin: -6px;
+}
+
+.cyannodes {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: cyan;
+  position: absolute;
+  margin: -4px;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+.cyannodes:hover {
+  width: 12px;
+  height: 12px;
+  margin: -6px;
+}
+
+.magentanodes {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: magenta;
+  position: absolute;
+  margin: -4px;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+.magentanodes:hover {
+  width: 12px;
+  height: 12px;
+  margin: -6px;
+}
+
+
+
+body {
+  background-color: rgb(20, 20, 30) !important;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 95vh;
+  width: 95vh;
+  flex-basis: 95%;
+
+}
+
+#modulebox {
+margin-left: auto;
+  width: 48px;
+  height: 100vh;
+  background: rgb(30, 30, 40);
+  -webkit-transition: height 0.2s, width 0.2s;
+  transition: width 0.2s;
+  display: flex;
+  align-items: flex-end;
+}
+
+#modulecontainer {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgb(30, 30, 40);
+  flex-grow: 1;
+}
+
+#sidebar {
+  background-color: rgb(30, 30, 40);
+  height: 100vh;
+  width: 48px;
+}
+#sidebarStatic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(30, 30, 40);
+  height: 100vh;
+  width: 48px;
+}
+
+#addModule {
+  display: flex;
+  height: 48px;
+  background-color: rgb(40, 40, 50);
+  opacity: 0.5;
+  transition: opacity, 0.2s;
+}
+
+
+
+#modules {
+  background-color: rgb(40, 40, 50);
+  flex-basis: auto;
+  height: 45px;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity .2s;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+#modules:hover {
+  opacity: .8
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.plusmod {
+  color: white;
+  opacity: .8;
+  font-size: 24pt;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  vertical-align: center;
+  cursor: default;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+
+
+}
+
+.plus {
+  flex-grow: 1;
+  color: white;
+  text-align: center;
+  font-size: 30pt;
+  font: Helvetica;
+  font-family: 'Times New Roman', Times, serif;
+
+  opacity: .8;
+
+}
+
+
+#topbar {
+  height: 5vh;
+  background-color: rgb(40, 40, 50);
+  position: relative;
+}
+
+.button {
+  position: relative;
+}
+
+#exptri {
+  position: fixed;
+  width: 14vh;
+  height: 14vh;
+  opacity: 0.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+#expand {
+  border-radius: 50%;
+  position: fixed;
+  width: 13vh;
+  height: 13vh;
+  border: 1px solid grey;
+}
+
+#expand:hover {
+  border: 1px solid white;
+}
+
+#contract {
+  border-radius: 50%;
+  position: fixed;
+  width: 6.5vh;
+  height: 6.5vh;
+  border: 1px solid grey;
+}
+
+#contract:hover {
+  border: 1px solid white;
+}
+
+#orb-red {
+  border-radius: 50%;
+  position: relative;
+  width: 20vh;
+  height: 20vh;
+  border: 1px solid red;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+
+#orb-orange {
+  border-radius: 50%;
+  position: fixed;
+  width: 30vh;
+  height: 30vh;
+  border: 1px solid orange;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-yellow {
+  border-radius: 50%;
+  position: fixed;
+  width: 40vh;
+  height: 40vh;
+  border: 1px solid yellow;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-lime {
+  border-radius: 50%;
+  position: fixed;
+  width: 50vh;
+  height: 50vh;
+  border: 1px solid lime;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-cyan {
+  border-radius: 50%;
+  position: fixed;
+  width: 60vh;
+  height: 60vh;
+  border: 1px solid cyan;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-magenta {
+  border-radius: 50%;
+  position: fixed;
+  width: 70vh;
+  height: 70vh;
+  border: 1px solid magenta;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-red2 {
+  border-radius: 50%;
+  position: fixed;
+  width: 80vh;
+  height: 80vh;
+  border: 1px solid red;
+  opacity: 0;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+
+#orb-orange2 {
+  border-radius: 50%;
+  position: fixed;
+  width: 10vh;
+  height: 10vh;
+  border: 1px solid orange;
+  opacity: 0;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+
+#orb-yellow2 {
+  border-radius: 50%;
+  position: fixed;
+  width: 10vh;
+  height: 10vh;
+  border: 1px solid yellow;
+  opacity: 0;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-lime2 {
+  border-radius: 50%;
+  position: fixed;
+  width: 10vh;
+  height: 10vh;
+  border: 1px solid lime;
+  opacity: 0;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-cyan2 {
+  border-radius: 50%;
+  position: fixed;
+  width: 10vh;
+  height: 10vh;
+  border: 1px solid cyan;
+  opacity: 0;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}
+
+#orb-magenta2 {
+  border-radius: 50%;
+  position: fixed;
+  width: 10vh;
+  height: 10vh;
+  border: 1px solid magenta;
+  opacity: 0;
+  -webkit-transition: width 0.2s, height 0.2s, opacity 0.2s;
+  transition: width 0.2s, height 0.2s, opacity 0.2s, border 0.2s;
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>glitchbox.io</title>
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body onload="OrbitBorder()" class="background">
+
+	
+
+		<svg id="linecontainer" width="100vw" height="100vh"></svg>
+
+
+	<div id="mainFlex">
+		<div id="container">
+
+			<img id="exptri" src="img/arrows.svg">
+
+			<div id="orb-red2" class="orbit orb-red"></div>
+			<div id="orb-magenta" class="orbit orb-magenta"></div>
+			<div id="orb-cyan" class="orbit orb-cyan"></div>
+			<div id="orb-lime"  class="orbit orb-lime"></div>
+			<div id="orb-yellow"  class="orbit orb-yellow"></div>
+			<div id="orb-orange" class="orbit orb-orange"></div>
+			<div id="orb-red" class="orbit orb-red"></div>
+			<div id="orb-magenta2" class="orbit orb-magenta"></div>
+			<div id="orb-cyan2" class="orbit orb-cyan"></div>
+			<div id="orb-lime2" class="orbit orb-lime"></div>
+			<div id="orb-yellow2" class="orbit orb-yellow"></div>
+			<div id="orb-orange2" class="orbit orb-orange"></div>
+			
+			<div id="expand" onclick="expand()"></div>
+			<div id="contract" onclick="contract()"></div>
+
+			
+
+			<div class="nodecontainer">
+
+			</div>
+
+			<div id="control">
+
+				<svg id="orbnav" class="icon icon-tabler icon-tabler-arrows-maximize" width="100" height="30" fill="none" stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" version="1.1" viewBox="0 0 100 30.5" xmlns="http://www.w3.org/2000/svg">
+					<path d="m0 0h24v24h-24z" fill="none" stroke="none"/>
+					<path d="m2.8035 28.348c23.549-34.375 70.844-34.375 94.393 0" style="fill:none;stop-color:#000000;stroke-linecap:square;stroke-miterlimit:0;"/>
+				 </svg>
+
+				<svg id="upchev" onclick="expand()" class="icon icon-tabler icon-tabler-chevron-up" width="30" fill="none" stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" version="1.1" viewBox="0 0 15 4.8" xmlns="http://www.w3.org/2000/svg">
+					<path d="m1.5 3.7729 6-2.7458 6 2.7458"/>
+				</svg>
+
+				<svg id="downchev" onclick="contract()" class="icon icon-tabler icon-tabler-chevron-up" width="30" fill="none" stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" version="1.1" viewBox="0 0 15 4.8" xmlns="http://www.w3.org/2000/svg">
+					<path d="m1.5 1.0271 6 2.7458 6-2.7458"/>
+				</svg>
+				 
+				
+	
+	
+	
+				<svg id="fright" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="32"  viewBox="0 0 24 24" stroke-width="0.5" stroke="grey" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+				<polyline points="9 6 15 12 9 18" />
+				</svg>
+	
+				<svg id="fleft" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="32" viewBox="0 0 24 24" stroke-width="0.5" stroke="grey" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+				<polyline points="15 6 9 12 15 18" />
+				</svg>
+				
+
+				 
+
+				<svg id="plus" onclick="AddNode()" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="28" height="28" viewBox="0 0 24 24" stroke-width="0.5" stroke="grey" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+					<circle cx="12" cy="12" r="9" />
+					<line x1="9" y1="12" x2="15" y2="12" />
+					<line x1="12" y1="9" x2="12" y2="15" />
+				</svg>
+			</div>
+
+			
+		
+		
+		</div>
+
+		<div id="concon">
+			<button type="button" id="connect" class="btn btn-outline-light btn-sm rounded-pill align-items-end" onclick="connectToggle()">⦿-⦿</button>
+		</div>
+
+		<div id="modulebox">
+			<div id="modulecontainer">
+				<div id="addModule">
+					<div class="spacer"></div>
+					<text class="plusmod">+</text>
+					<div class="spacer"></div>
+				</div>
+			</div>
+			<div id="sidebar"></div>
+		</div>
+
+
+	</div>
+
+	<div id="sidebarStatic"></div>
+
+
+
+
+
+
+			
+
+			<svg id="adj" onclick="ModuleToggle()" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box-margin" width="40" height="40" viewBox="0 0 24 24" stroke-width="0.5" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+				<path d="M8 8h8v8h-8z" />
+				<path d="M4 4v.01" />
+				<path d="M8 4v.01" />
+				<path d="M12 4v.01" />
+				<path d="M16 4v.01" />
+				<path d="M20 4v.01" />
+				<path d="M4 20v.01" />
+				<path d="M8 20v.01" />
+				<path d="M12 20v.01" />
+				<path d="M16 20v.01" />
+				<path d="M20 20v.01" />
+				<path d="M20 16v.01" />
+				<path d="M20 12v.01" />
+				<path d="M20 8v.01" />
+				<path d="M4 16v.01" />
+				<path d="M4 12v.01" />
+				<path d="M4 8v.01" />
+				</svg>
+		   
+		<!--<img id="minus" src="/img/minus.svg" onclick="removeNode()">-->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/tonecontent.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>-->
+<!--<script src="js/p5content.js"></script>-->
+
+
+</body>
+</html>
+
